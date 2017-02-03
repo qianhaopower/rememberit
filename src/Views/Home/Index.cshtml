@@ -1,0 +1,60 @@
+﻿
+
+
+
+<ul>
+    <li>
+        <a href="#" class="round green">
+            Gas
+            <span class="round" id="gasSpan" >
+                When you turn off gas
+            </span>
+        </a>
+    </li>
+    <li style="margin-left: 50px;">
+        <a href="#" class="round red">
+            Door
+            <span class="round" id="doorSpan">
+                When you lock door
+            </span>
+        </a>
+    </li>
+    <li style="margin-left: 50px;">
+        <a href="#" class="round yellow">
+            Fridge
+            <span class="round" id="fridgeSpan">
+                When you close fridge
+            </span>
+        </a>
+    </li>
+   
+</ul>
+<br />
+<h3 >You turned off your <span style="color:rgba(239,57,50,1)">gas</span> at <i> @ViewData["GasTurnOffTime"]</i>, that is <i> @ViewData["GasTurnOffHowLong"]</i> ago.</h3>
+<br/>
+<h3 >You closed your <span style="color:rgba(1,151,171,1)">door</span> at <i> @ViewData["DoorTurnOffTime"]</i>, that is <i> @ViewData["DoorTurnOffHowLong"]</i> ago.</h3>
+<br />
+<h3 >You closed your <span style="color: rgba(252,227,1,1)">fridge</span> at <i> @ViewData["FridgeTurnOffTime"]</i>, that is <i> @ViewData["FridgeTurnOffHowLong"]</i> ago.</h3>
+<script type="text/jscript">
+    $('#gasSpan').click(function () {
+        debugger;
+        var url = "/Home/tickGas";
+        $.get(url, null, function (data) {
+            location.reload();
+        });
+    });
+    $('#doorSpan').click(function () {
+        debugger;
+        var url = "/Home/tickDoor";
+        $.get(url, null, function (data) {
+            location.reload();
+        });
+    })
+    $('#fridgeSpan').click(function () {
+        debugger;
+        var url = "/Home/tickFridge";
+        $.get(url, null, function (data) {
+            location.reload();
+        });
+    })
+</script>
